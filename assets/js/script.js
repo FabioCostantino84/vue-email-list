@@ -10,21 +10,28 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            email: '',
+
+            emailsGen:[],
+        
+                
         }
     },
     mounted(){
-
+        for ( let index= 0; index < 10; index++){
+        
         axios
         .get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then(response =>{
-            console.log(response);
+            /* console.log(response);
             console.log(response.data);
             console.log(response.data.response);
             this.email = response.data.response;
-            console.log(this.email);
+            console.log(this.email); */
+            this.emailsGen.push (response.data.response);
         })
+
     }
+    },
     
 }).mount('#app')
 
