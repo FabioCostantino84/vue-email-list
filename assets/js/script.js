@@ -16,7 +16,9 @@ createApp({
                 
         }
     },
+    
     mounted(){
+        //con for ciclo per generare 10 email
         for ( let index= 0; index < 10; index++){
         
         axios
@@ -27,6 +29,8 @@ createApp({
             console.log(response.data.response);
             this.email = response.data.response;
             console.log(this.email); */
+
+            //pusho le email generate nel mio array vuoto emailsGen
             this.emailsGen.push (response.data.response);
         })
 
